@@ -1,47 +1,59 @@
-# Project Title
-Node.js SMTP (Simple Mail Transfer Protocol) Server
+# 📬 Node.js SMTP Server
 
-## Project Description
-A lightweight SMTP server designed to receive, process, and log incoming email streams. Deployed on AWS EC2 and routed via Cloudflare.
+A lightweight SMTP server that receives, processes, and logs incoming email streams in real time. Built with Node.js, deployed on AWS EC2, and routed through Cloudflare.
 
-## Screenshots
-<img width="611" height="293" alt="ReadmeAttachment1" src="https://github.com/user-attachments/assets/90cc0974-231d-44fa-9854-1f0a0c863061" />
-<img width="650" height="320" alt="ReadmeAttachment2" src="https://github.com/user-attachments/assets/7b7c52d0-d7d5-4bb1-9d2f-69767157f7a2" />
-<img width="912" height="483" alt="image" src="https://github.com/user-attachments/assets/c6447e03-1e2e-4f9d-9823-233c57a97c05" />
+---
 
+## How It Works
 
+The server listens for inbound SMTP traffic on **TCP port 25**. When an email arrives, it captures sender and recipient metadata, processes the raw data stream, and outputs everything directly to the console.
 
-## Hosted URL
-This is a backend SMTP server and cannot be accessed via a web browser. To test the server, send an email to any address at this domain:  
-address@aniirudh.me <br>
-address@rjainil.me <br>
-address@palksh.me
+---
 
-## Features Implemented
+## Features
 
-### Frontend
-N/A (Backend-only application)
+- Listens for inbound SMTP connections on port 25
+- Logs sender (`MAIL FROM`) and recipient (`RCPT TO`) metadata
+- Streams and outputs raw email data to the console
+- Lightweight — no database, no frontend, just the protocol
 
-### Backend
-- Listens for inbound SMTP traffic on TCP port 25.
-- Captures and logs sender (onMailFrom) and recipient (onRcptTo) metadata.
-- Processes raw email data streams and outputs them directly to the console.
-- Executes via standard Node.js runtime attached to the active terminal session.
+---
 
-## Technologies/Libraries/Packages Used
-- Runtime: Node.js  
-- Libraries: smtp-server  
-- Infrastructure: AWS EC2  
-- DNS/Networking: Cloudflare  
+## Tech Stack
+
+| Layer          | Technology      |
+|----------------|-----------------|
+| Runtime        | Node.js         |
+| SMTP Library   | `smtp-server`   |
+| Hosting        | AWS EC2         |
+| DNS/Networking | Cloudflare      |
+
+---
+
+## Live Server
+
+This is a backend-only service with no web interface.  
+To test it, send an email to any address at : anything@rjainil.me
+
+---
 
 ## Local Setup
 
-- Clone the repository: git clone [https://github.com/anirudhm2007/SMTP-server]
-- Install dependencies: ```npm install smtp-server```
-- Start the server: ```sudo node index.js```
+```bash
+# 1. Clone the repo
+git clone https://github.com/anirudhm2007/SMTP-server
 
-  
-## Team Members
-1. Anirudh Madhavan   
-2. Palksh Upadhyay
-3. Rathwa Jainil
+# 2. Install dependencies
+npm install smtp-server
+
+# 3. Start the server (port 25 requires root)
+sudo node index.js
+```
+
+---
+
+## Team
+
+- Anirudh Madhavan (2025IMT-006)
+- Palksh Upadhyay (2025BCS-059)
+- Rathwa Jainil (2025BCS-072)
